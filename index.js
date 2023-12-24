@@ -15,6 +15,7 @@ function changeBackground() {
 }
 
 toggle.addEventListener("click", changeBackground);
+button.addEventistener("click", guessNumber);
 
 function guessNumber() {
   let random = Math.floor(Math.random() * 6) + 1;
