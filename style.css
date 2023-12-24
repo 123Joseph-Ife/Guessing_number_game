@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* hsl(234, 96%, 10%); 
+hsl(111, 99%, 48%)*/
+
+body {
+    background-color: hsl(0, 0%, 100%);
+    color: hsl(230, 17%, 14%);
+    font-family: cursive;
+}
+
+.toggle {
+    width: max-content;
+    cursor: pointer;
+}
+
+.toggle .check {
+    display: none;
+}
+
+.toggle label {
+    width: 100px;
+    height: 45px;
+    display: block;
+    border-radius: 2rem;
+    position: relative;
+    background: hsl(227, 47%, 96%);
+    cursor: pointer;
+}
+
+.toggle label::after {
+    content: '';
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: hsl(230, 22%, 74%);
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    transition: left 300ms;
+}
+
+.toggle:has(input:checked) label::after {
+    left: 60px;
+}
+
+body.checked {
+    background-color: hsl(230, 17%, 14%);
+    color: hsl(0, 0%, 100%);
+}
+
+label.checked {
+    background: linear-gradient(20deg, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+}
+
+label.checked::after {
+    background-color: white;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+header h1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+}
+
+.cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 30px;
+    gap: 10px;
+}
+
+.cont .output {
+    width: 80%;
+    height: 35vh;
+    border-radius: 30%;
+    background-color: hsl(0, 0%, 86%);
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.cont .output.checked {
+    background-color: hsl(228, 28%, 20%);
+}
+
+.cont .input {
+    /* height: 60px; */
+    width: 80%;
+    border-radius: 30px;
+    padding: 20px;
+    border: 5px solid hsl(228, 28%, 20%);
+    background: none;
+    caret-color: hsl(228, 28%, 20%);
+    color: hsl(228, 28%, 20%);
+}
+
+.cont .input:focus {
+    outline: 0;
+}
+
+.cont .input::placeholder {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: hsl(228, 28%, 20%);
+}
+
+.cont .input.checked {
+    caret-color: hsl(0, 0%, 100%);
+    color: hsl(0, 0%, 100%);
+}
+
+.cont .input.checked::placeholder {
+    color: hsl(0, 0%, 100%);
+}
+
+.cont .button {
+    padding: 20px 50px;
+    background-color: hsl(0, 0%, 86%);
+    color: hsl(228, 28%, 20%);
+    font-size: 1rem;
+    border-radius: 40px;
+    border: none;
+    cursor: pointer;
+}
+
+.cont .button.checked {
+    color: hsl(0, 0%, 100%);
+    background-color: hsl(228, 28%, 20%);
+}
+
+/* - White: hsl(0, 0%, 100%)
+- Off white: hsl(0, 0%, 94%)
+- Light grey: hsl(0, 0%, 86%)
+- Smokey grey: hsl(0, 1%, 44%)
+- Off black: hsl(0, 0%, 8%) */
